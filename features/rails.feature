@@ -85,3 +85,7 @@ Feature: Rails
   Scenario: Includes Heroku Rake task
     When I run "rake --tasks figaro:heroku"
     Then the output should be "rake figaro:heroku[app]  # Configure Heroku according to application.yml"
+
+  Scenario: Includes Travis Rake task
+    When I run "rake --tasks figaro:travis"
+    Then the output should be "rake figaro:travis[vars]  # Configure Travis according to application.yml"

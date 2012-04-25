@@ -6,4 +6,8 @@ namespace :figaro do
     command << " --app #{args[:app]}" if args[:app]
     Kernel.system(command)
   end
+
+  desc "Configure Travis according to application.yml"
+  task :travis, [:vars] => :environment do
+  end
 end
