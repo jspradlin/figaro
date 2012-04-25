@@ -9,5 +9,6 @@ namespace :figaro do
 
   desc "Configure Travis according to application.yml"
   task :travis, [:vars] => :environment do
+    FileUtils.touch(Rails.root.join(".travis.yml"))
   end
 end
