@@ -29,7 +29,7 @@ gem "figaro"
 Next up, install Figaro:
 
 ```bash
-rails generate figaro:install
+$ rails generate figaro:install
 ```
 
 This generates a commented `config/application.yml` file and ignores it in your `.gitignore`. Add your own configuration to this file and you're done!
@@ -61,23 +61,23 @@ Heroku's beautifully simple application configuration was the [inspiration](http
 Typically, to configure your application `ENV` on Heroku, you would do the following from the command line using the `heroku` gem:
 
 ```bash
-heroku config:add PUSHER_APP_ID=8926
-heroku config:add PUSHER_KEY=0463644d89a340ff1132
-heroku config:add PUSHER_SECRET=0eadfd9847769f94367b
-heroku config:add STRIPE_API_KEY=jHXKPPE0dUW84xJNYzn6CdWM2JfrCbPE
-heroku config:add STRIPE_PUBLIC_KEY=pk_HHtUKJwlN7USCT6nE5jiXgoduiNl3
+$ heroku config:add PUSHER_APP_ID=8926
+$ heroku config:add PUSHER_KEY=0463644d89a340ff1132
+$ heroku config:add PUSHER_SECRET=0eadfd9847769f94367b
+$ heroku config:add STRIPE_API_KEY=jHXKPPE0dUW84xJNYzn6CdWM2JfrCbPE
+$ heroku config:add STRIPE_PUBLIC_KEY=pk_HHtUKJwlN7USCT6nE5jiXgoduiNl3
 ```
 
 But Figaro provides a rake task to do just that! Just run:
 
 ```bash
-rake figaro:heroku
+$ rake figaro:heroku
 ```
 
 Optionally, you can pass in the name of the Heroku app:
 
 ```bash
-rake figaro:heroku[my-awesome-app]
+$ rake figaro:heroku[my-awesome-app]
 ```
 
 ### What if I'm not using Heroku?
@@ -100,7 +100,7 @@ Fortunately, Travis recently enabled [encrypted `env` configuration](https://git
 If your app is already on Travis and using Figaro, just:
 
 ```bash
-rake figaro:travis
+$ rake figaro:travis
 ```
 
 This wraps up your Figaro configuration, encrypts it and adds it to your `.travis.yml` file:
@@ -113,7 +113,7 @@ env: {secure: ec7ij5JLi8t3w5sq1ymG/xo6k0XYAfqENw8UQjT44BwsmJrlZZr75pLW/IvfJXn1Jp
 If you need to include additional, Travis-specific configuration variables, you can do so right in the rake task:
 
 ```bash
-rake figaro:travis[FOO=baz CI=true]
+$ rake figaro:travis[FOO=baz CI=true]
 ```
 
 ## This sucks. How can I make it better?
