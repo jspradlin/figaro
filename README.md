@@ -42,7 +42,7 @@ Pusher.key    = ENV["PUSHER_KEY"]
 Pusher.secret = ENV["PUSHER_SECRET"]
 ```
 
-If your app requires Rails-environment-specific configuration, you can also namespace your configuration under a key representing `Rails.env` in `application.yml`.
+If your app requires `Rails.env`-specific configuration, you can namespace your configuration under a key representing `Rails.env` in `application.yml`.
 
 ```yaml
 HELLO: world
@@ -86,7 +86,7 @@ No problem. Just add `config/application.yml` to your production app on the serv
 
 ## <a id="travis" name="travis"></a>Give me Travis or give me death!
 
-Okay, okay. Travis allows you to add an `env` configuration to your `.travis.yml` file, which is then included in `ENV` during your build.
+Okay, okay. Travis allows you to add an `env` configuration to your `.travis.yml`, which is included in `ENV` during your build.
 
 ```yaml
 language: ruby
